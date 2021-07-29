@@ -25,7 +25,7 @@
     "static/js/10.f0040b65.chunk.js.map": "/movieshub/static/js/10.f0040b65.chunk.js.map",
     "static/js/11.154f14ce.chunk.js": "/movieshub/static/js/11.154f14ce.chunk.js",
     "static/js/11.154f14ce.chunk.js.map": "/movieshub/static/js/11.154f14ce.chunk.js.map",
-    "main.css": "/movieshub/static/css/main.77e95388.chunk.css",
+    "main.css": "/movieshub/static/css/main.89b4d06e.chunk.css",
     "main.js": "/movieshub/static/js/main.b9a9a849.chunk.js",
     "main.js.map": "/movieshub/static/js/main.b9a9a849.chunk.js.map",
     "runtime-main.js": "/movieshub/static/js/runtime-main.518cd290.js",
@@ -60,15 +60,16 @@
     "static/js/27.89e3862a.chunk.js.map": "/movieshub/static/js/27.89e3862a.chunk.js.map",
     "index.html": "/movieshub/index.html",
     "static/css/3.7a623159.chunk.css.map": "/movieshub/static/css/3.7a623159.chunk.css.map",
-    "static/css/main.77e95388.chunk.css.map": "/movieshub/static/css/main.77e95388.chunk.css.map",
+    "static/css/main.89b4d06e.chunk.css.map": "/movieshub/static/css/main.89b4d06e.chunk.css.map",
     "static/js/14.4a2031c8.chunk.js.LICENSE.txt": "/movieshub/static/js/14.4a2031c8.chunk.js.LICENSE.txt",
     "static/js/3.a100a542.chunk.js.LICENSE.txt": "/movieshub/static/js/3.a100a542.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/movieshub/static/media/Gilroy-SemiBold.9537f708.woff",
     "static/media/slick-theme.css": "/movieshub/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.518cd290.js",
     "static/js/14.4a2031c8.chunk.js",
-    "static/css/main.77e95388.chunk.css",
+    "static/css/main.89b4d06e.chunk.css",
     "static/js/main.b9a9a849.chunk.js"
   ]
 }
