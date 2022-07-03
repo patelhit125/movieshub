@@ -1,6 +1,6 @@
 # MoviesHub
 
-[Click here for MoviesHub](https://patelhit125.github.com/movieshub)
+[Click here for MoviesHub](https://patelhit125.github.io/movieshub)  
 MoviesHub is source for Movies, TV Shows, Celebrity Content, Ratings and Reviews. Find and watch the latest Movies and TV shows for free online.
 
 ## Movies
