@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { FiX } from 'react-icons/fi'
+import { EMBEDLINK } from '../constant';
 
 const OverLay = (props) => {
 
@@ -10,7 +11,7 @@ const OverLay = (props) => {
     if (overlayRef.current.classList.contains("hide")) {
       overlayRef.current.classList.remove("hide")
       document.getElementById("body").classList.add("overflow")
-      document.getElementById('iframe').src = 'https://www.2embed.ru/embed/tmdb/' + name + '?id=' + id + '&s=' + season + '&e=' + episode;
+      document.getElementById('iframe').src = EMBEDLINK + name + '?id=' + id + '&s=' + season + '&e=' + episode;
       document.getElementById('iframe').src = document.getElementById('iframe').src;
     }
   }
@@ -31,7 +32,7 @@ const OverLay = (props) => {
           <span className='btn btn-primary me-3 mt-3' onClick={handleClick}>Watch online</span>
           <div className='overlay hide' ref={overlayRef}>
             <div className='close' onClick={handleClose}><FiX /></div>
-            <iframe id="iframe" className='w-100 h-100' title={title} frameBorder="0" allowFullScreen={true} width="100%" height="100%" loading="lazy" src={'https://www.2embed.ru/embed/tmdb/' + name + '?id=' + id + '&s=' + season + '&e=' + episode}></iframe>
+            <iframe id="iframe" className='w-100 h-100' title={title} frameBorder="0" allowFullScreen={true} width="100%" height="100%" loading="lazy" src={EMBEDLINK + name + '?id=' + id + '&s=' + season + '&e=' + episode}></iframe>
           </div>
         </span>
       }

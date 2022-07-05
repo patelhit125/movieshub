@@ -1,5 +1,6 @@
 export const API_KEY = '09035c64e21b751b82504e01f9d703fd'
 export const API = 'https://api.themoviedb.org/3';
+export const EMBEDLINK = 'https://www.2embed.to/embed/tmdb/';
 export const API_TRENDING_ALL = API + '/trending/all/day?api_key=' + API_KEY;
 export const API_DISCOVER_MOVIE = API + '/discover/movie?api_key=' + API_KEY;
 export const API_NOWPLAYING_MOVIE = API + '/movie/now_playing?api_key=' + API_KEY;
