@@ -78,7 +78,7 @@ const App = () => {
               <Route
                 exact
                 path={page.pageLink}
-                render={() => <page.view />}
+                render={() => <page.view key={Date.now()} />}
                 key={index}
               />
             );
