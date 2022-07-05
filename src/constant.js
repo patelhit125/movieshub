@@ -150,7 +150,7 @@ export const dataList = {
     to: '/movieshub/movie/'
   },
   scifiMovies: {
-    name: 'SCIFI MOVIES',
+    name: 'SCI-FI MOVIES',
     api: API_SCIFI_MOVIE,
     title: 'title',
     to: '/movieshub/movie/'
@@ -192,7 +192,7 @@ export const dataList = {
     to: '/movieshub/tv/'
   },
   scifiTv: {
-    name: 'SCIFI TVs',
+    name: 'SCI-FI TVs',
     api: API_SCIFI_TV,
     title: 'title',
     to: '/movieshub/tv/'
@@ -267,14 +267,15 @@ export const getDateShort = (datetime) => {
 }
 
 export const getDateShortest = (datetime) => {
-  if (datetime === undefined) return null
+  if (datetime === undefined || datetime === '') return null
   const date = new Date(datetime);
   const options = { year: 'numeric' };
   return (date.toLocaleString("en-US", options));
 }
 
 export const avg = (value) => {
-  if (value > 0) return value.toFixed(1)
+  if (value !== 0) return value.toFixed(1)
+  else return null
 }
 
 export const currency = (value) => {

@@ -3,8 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { API_KEY, POSTER_PATH, WIDTH_500, avg, API_KEYWORD, getDateShortest } from '../constant';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import axios from 'axios';
-import frame1 from '../resources/Frame1.png'
-import { FiSlash } from 'react-icons/fi';
+import frame1 from '../resources/Frame1.png';
 import { Link } from 'react-router-dom';
 
 const People = () => {
@@ -40,7 +39,6 @@ const People = () => {
 
   return (
     <div className="container">
-      {data.length > 0 ?
         <div>
           <div className='mt-5 aLink' onClick={history.goBack}>&#8592; Back</div>
           <h2 className="mt-4 fw-bold">Movies with "{keyword.name}"</h2>
@@ -61,13 +59,7 @@ const People = () => {
               </Link>
             ))}
           </div>
-        </div> :
-        <div className='mt-5 mb-5 text-center'>
-          <div className='h1'><FiSlash /></div>
-          <div className='mt-3 mb-5'>No movies found with keyword "{keyword.name}"...</div>
-          <div className='aLink' onClick={history.goBack}>&#8592; Go Back</div>
         </div>
-      }
     </div>
   )
 }

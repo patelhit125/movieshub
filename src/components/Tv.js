@@ -2,7 +2,7 @@ import React, { useState, useEffect, lazy } from 'react'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import ReadMoreReact from 'read-more-react';
-import { API_KEY, POSTER_PATH, WIDTH_ORIGINAL, WIDTH_300, getDateShort, API_TV, count_runtime, avg } from '../constant';
+import { API_KEY, POSTER_PATH, WIDTH_ORIGINAL, WIDTH_300, API_TV, count_runtime, avg, getDateShortest } from '../constant';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { retry } from '../utils/CommonFunctions';
 import axios from 'axios';
@@ -16,7 +16,7 @@ const Review = lazy(() => retry(() => import('./Review')));
 const ExternalId = lazy(() => retry(() => import('./ExternalId')));
 const Video = lazy(() => retry(() => import('./Video')));
 const Season = lazy(() => retry(() => import('./Season')));
-const Image = lazy(() => retry(() => import('./Image')));
+// const Image = lazy(() => retry(() => import('./Image')));
 
 const Tv = () => {
   const id = useParams().id;
@@ -73,7 +73,7 @@ const Tv = () => {
                     <span className="genre" key={index}>{dataGenre.name}</span>
                   ))}
                 </div>
-                <div className='text-secondary'>{data.first_air_date && <>{getDateShort(data.first_air_date)} &#8212; {getDateShort(data.last_air_date)}</>}</div>
+                <div className='text-secondary'>{data.first_air_date && <>{getDateShortest(data.first_air_date)} &#8212; {getDateShortest(data.last_air_date)}</>}</div>
                 <div className='text-secondary'>{count_runtime(data['episode_run_time']) && <>Runtime: {count_runtime(data['episode_run_time'])}</>}</div>
                 <div>{data.vote_average && avg(data.vote_average)} <span className="stars" style={{ '--rating': data.vote_average && avg(data.vote_average)}}></span></div>
                 <div className="mt-4 fw-bold">{data.tagline && '"' + data.tagline + '"'}</div>
@@ -96,7 +96,7 @@ const Tv = () => {
                 <Review id={id} name='tv' />
               </div>
             </div>
-            <Image id={id} name='tv' />
+            {/* <Image id={id} name='tv' /> */}
             <RowList name='recommendationTv' id={id} />
             <RowList name='similarTv' id={id} />
             <div className='hide-md mt-5'>

@@ -73,7 +73,7 @@ const Video = (props) => {
               <div key={index} className="card-link" to='/movieshub/'>
                 <div className="card" key={index}>
                   <div className="card-body">
-                    <div className="card-text">
+                    <div className="card-text w-iframe">
                       <YouTube
                         videoId={dataRow.key}
                         title={dataRow.name ? dataRow.name : dataRow.title}

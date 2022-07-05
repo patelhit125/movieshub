@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { API_SEARCH, POSTER_PATH, WIDTH_500, avg, getDateShortest } from '../constant';
-import { FiX } from "react-icons/fi";
+import { FiSlash, FiX } from "react-icons/fi";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import axios from 'axios';
 import frame1 from '../resources/Frame1.png'
@@ -107,7 +107,7 @@ const Navigation = () => {
     const results = data.length > 0 &&
       <div className='row container ps-0 pe-0 overflowY-scroll'>
         {data.map((dataRow, index) => (
-          <Link onClick={handleClick} className='aLink col-6 col-sm-4 col-md-3 col-lg-2 mt-3' key={index} to={dataRow.media_type ? dataRow.media_type === 'movie' ? '/movieshub/movie/' + dataRow.id : dataRow.media_type === 'tv' ? '/movieshub/tv/' + dataRow.id : '/movieshub/person/' + dataRow.id : '/movieshub/movie/' + dataRow.id}>
+          <Link onClick={handleClick} className='aLink col-6 col-sm-4 col-md-3 col-lg-2 mt-3' key={index} to={dataRow.media_type ? dataRow.media_type === 'movie' ? '/movieshub/movie/' + dataRow.id : dataRow.media_type === 'tv' ? '/movieshub/tv/' + dataRow.id : '/movieshub/people/' + dataRow.id : '/movieshub/movie/' + dataRow.id}>
             <div className="card" key={index}>
               <div className="card-img-top card-img-search rounded">
                 <LazyLoadImage className="img-fluid" src={dataRow.poster_path ? POSTER_PATH + WIDTH_500 + dataRow.poster_path : POSTER_PATH + WIDTH_500 + dataRow.profile_path} effect="opacity" alt={dataRow.title ? dataRow.title : dataRow.name} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
@@ -115,7 +115,7 @@ const Navigation = () => {
               <div className="card-body">
                 <div className="card-text">
                   <div className="text-muted">{dataRow.gender === 1 && 'Female'}{dataRow.gender === 2 && 'Male'}</div>
-                  <div className="text-muted">{dataRow.vote_average && <>{avg(dataRow.vote_average)} &#8212; </> } {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? <>{getDateShortest(dataRow.release_date)}</> : <>{getDateShortest(dataRow.first_air_date)}</>}</div>
+                  <div className="text-muted">{dataRow.vote_average > 0 ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? <>{getDateShortest(dataRow.release_date)}</> : <>{getDateShortest(dataRow.first_air_date)}</>}</div>
                   <div>{dataRow.title ? dataRow.title : dataRow.name}</div>
                   <div className='text-muted'>
                     {dataRow['known_for'] && dataRow['known_for'].map((dataKnown, index) => (
@@ -173,7 +173,7 @@ const Navigation = () => {
                 onChange={handleChange}
                 autoFocus
               />
-              <div className='overflowY-scroll'>{searchResults ? searchResults : searchTerm.length > 0 && <div className='mt-5 text-center'>No results<br />Try something different...</div>}</div>
+              <div className='overflowY-scroll'>{searchResults ? searchResults : searchTerm.length > 0 && <div className='mt-5 text-center text-muted'><FiSlash className='h1' /><br />No results<br />Try something different...</div>}</div>
             </div>
           </div>
         </div>

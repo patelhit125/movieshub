@@ -15,7 +15,7 @@ const Images = (props) => {
     const getData = async () => {
       axios.get(API_PERSON + id + '/images?api_key=' + API_KEY)
         .then((data) => {
-          setTimeout(() => setData(data.data.profiles), 5000);
+          setData(data.data.profiles);
         })
         .catch((error) => {
           console.error(error);
@@ -57,7 +57,7 @@ const Images = (props) => {
                   {data.map((dataRow, index) => (
                     <div key={index} className='col-6 col-sm-4 col-md-3 mb-4'>
                       <a href={POSTER_PATH + WIDTH_ORIGINAL + dataRow.file_path}>
-                        <LazyLoadImage key={index} className="img-fluid" src={POSTER_PATH + WIDTH_ORIGINAL + dataRow.file_path} effect="opacity" alt={id} onError={(e) => { e.target.onerror = null; e.target.src = frame4 }} />
+                        <LazyLoadImage key={index} className="img-fluid rounded" src={POSTER_PATH + WIDTH_ORIGINAL + dataRow.file_path} effect="opacity" alt={id} onError={(e) => { e.target.onerror = null; e.target.src = frame4 }} />
                       </a>
                     </div>
                   ))}

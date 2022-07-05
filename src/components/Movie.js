@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy } from 'react'
 import { useParams } from 'react-router';
 import ReadMoreReact from 'read-more-react';
-import { API_MOVIE, API_KEY, POSTER_PATH, WIDTH_ORIGINAL, WIDTH_500, count_runtime, avg, currency } from '../constant';
+import { API_MOVIE, API_KEY, POSTER_PATH, WIDTH_ORIGINAL, WIDTH_500, count_runtime, avg, currency, getDateShortest } from '../constant';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { retry } from '../utils/CommonFunctions';
 import axios from 'axios';
@@ -14,7 +14,7 @@ const Keyword = lazy(() => retry(() => import('./Keyword')));
 const Review = lazy(() => retry(() => import('./Review')));
 const ExternalId = lazy(() => retry(() => import('./ExternalId')));
 const Video = lazy(() => retry(() => import('./Video')));
-const Image = lazy(() => retry(() => import('./Image')));
+// const Image = lazy(() => retry(() => import('./Image')));
 const OverLay = lazy(() => retry(() => import('./OverLay')));
 
 const Movie = () => {
@@ -76,7 +76,7 @@ const Movie = () => {
                 <span className="genre" key={index}>{dataGenre.name}</span>
               ))}
             </div>
-            <div className='text-secondary'>{data.release_date && <>{data.release_date} &#8212;</>} {count_runtime(data.runtime)}</div>
+            <div className='text-secondary'>{data.release_date && <>{getDateShortest(data.release_date)} &#8212;</>} {count_runtime(data.runtime)}</div>
             <div>{data.vote_average && avg(data.vote_average)} <span className="stars" style={{ '--rating': data.vote_average && avg(data.vote_average) }}></span></div>
             <div className="mt-4 text-bold">{data.tagline && '"' + data.tagline + '"'}</div>
             <div className='text-secondary'>
@@ -95,7 +95,7 @@ const Movie = () => {
             <Review id={id} name='movie' />
           </div>
         </div>
-        <Image id={id} name='movie' />
+        {/* <Image id={id} name='movie' /> */}
         <RowList name='recommendationMovie' id={id} />
         <RowList name='similarMovie' id={id} />
         <div className='hide-md mt-5'>

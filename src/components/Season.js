@@ -50,7 +50,7 @@ const Season = (props) => {
     <>
       {data.length > 0 &&
         <div className="mt-5 position-relative">
-          <h2>SEASONS</h2>
+          <h2 className='fw-bold'>SEASONS</h2>
           <div className="d-flex flex-row" ref={ref}>
             <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
             <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>

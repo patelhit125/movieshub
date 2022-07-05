@@ -127,6 +127,10 @@ iframe {
   height: 253px;
 }
 
+.w-iframe {
+  width: 450px;
+}
+
 .close {
   position: fixed;
   right: 20px;
@@ -175,6 +179,10 @@ iframe {
   iframe {
     width: 320px;
     height: 180px;
+  }
+  
+  .w-iframe {
+    width: 320px;
   }
 
   .search-height {
@@ -324,7 +332,7 @@ iframe {
   background: linear-gradient(
     90deg,
     #fcbe11 var(--percent),
-    #474e55 var(--percent)
+    #8d96a1 var(--percent)
   );
   -webkit-background-clip: text;
   background-clip: text;
