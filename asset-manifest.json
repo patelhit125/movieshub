@@ -26,8 +26,8 @@
     "static/js/11.2ac08331.chunk.js": "/movieshub/static/js/11.2ac08331.chunk.js",
     "static/js/11.2ac08331.chunk.js.map": "/movieshub/static/js/11.2ac08331.chunk.js.map",
     "main.css": "/movieshub/static/css/main.af1e3a55.chunk.css",
-    "main.js": "/movieshub/static/js/main.6c315a04.chunk.js",
-    "main.js.map": "/movieshub/static/js/main.6c315a04.chunk.js.map",
+    "main.js": "/movieshub/static/js/main.c25d8323.chunk.js",
+    "main.js.map": "/movieshub/static/js/main.c25d8323.chunk.js.map",
     "runtime-main.js": "/movieshub/static/js/runtime-main.a3fe3658.js",
     "runtime-main.js.map": "/movieshub/static/js/runtime-main.a3fe3658.js.map",
     "static/js/14.723ae5de.chunk.js": "/movieshub/static/js/14.723ae5de.chunk.js",
@@ -83,6 +83,6 @@
     "static/js/runtime-main.a3fe3658.js",
     "static/js/14.723ae5de.chunk.js",
     "static/css/main.af1e3a55.chunk.css",
-    "static/js/main.6c315a04.chunk.js"
+    "static/js/main.c25d8323.chunk.js"
   ]
 }
