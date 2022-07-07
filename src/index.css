@@ -36,7 +36,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: #10141f !important;
+  background-color: #090c13 !important;
   color: #f8f9fa !important;
 }
 
@@ -94,11 +94,11 @@ body {
 }
 
 .backdrop {
-  background: -moz-linear-gradient(top,rgba(125,185,232,0) 0,#10141f 100%);
-  background: -webkit-linear-gradient(top,rgba(125,185,232,0),#10141f);
-  background: linear-gradient(180deg,rgba(125,185,232,0) 0,#10141f);
+  background: -moz-linear-gradient(top,rgba(125,185,232,0) 0,#090c13 100%);
+  background: -webkit-linear-gradient(top,rgba(125,185,232,0),#090c13);
+  background: linear-gradient(180deg,rgba(125,185,232,0) 0,#090c13);
   bottom: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007db9e8",endColorstr="#10141f",GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007db9e8",endColorstr="#090c13",GradientType=0);
   left: 0;
   position: absolute;
   right: 0;
@@ -301,11 +301,6 @@ iframe {
   cursor: pointer;
 }
 
-.footerLinks {
-  display: flex;
-  flex-direction: column;
-}
-
 .link {
   color: #f8f9fa;
   text-decoration: none;
@@ -465,10 +460,6 @@ iframe {
   transform: rotate(-45deg);
   top: 10px;
   left: 8px;
-}
-
-.bg-grey-dark {
-  background-color: #1d232f;
 }
 
 .card-img-top {

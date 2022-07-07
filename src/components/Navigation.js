@@ -133,7 +133,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-grey-dark topNav" ref={wrapperRef} id="navbar">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark topNav" ref={wrapperRef} id="navbar">
         <div className="container mt-1 mb-1">
           <Link className="navbar-brand" to='/movieshub/'>Movies<span className="text-primary" onClick={handleClick}>Hub</span></Link>
           <div className='d-flex justify-content-center align-items-center'>
