@@ -90,7 +90,7 @@ const Image = (props) => {
     <>
       {data.length > 0 &&
         <div>
-          <h1 className="mt-5 fw-bold">IMAGES</h1>
+          <h2 className="mt-5 fw-bold mb-3">IMAGES</h2>
           <div className={clamped ? "clamp" : "long-text"} ref={containerRef}>
             <SimpleReactLightbox>
               <SRLWrapper options={options}>

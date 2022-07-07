@@ -39,12 +39,11 @@ const Keyword = (props) => {
 
   return (
     <div>
-
       <div>
         {data.length > 0 &&
           <>
             <div className="text-bold mt-4">Keyword Cloud</div>
-            <div className="mt-1">{data.map((dataRow, index) => (
+            <div className="mt-2">{data.map((dataRow, index) => (
               <Link to={'/movieshub/keyword/' + dataRow.id} className="badge" key={index}>{dataRow.name}</Link>
             ))}
             </div>

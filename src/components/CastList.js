@@ -66,23 +66,23 @@ const CastList = (props) => {
     <>
       {data.length > 0 &&
         <div className="position-relative">
-          <h2 className="mt-5 fw-bold">CASTS</h2>
-          <div className="cast-row" ref={ref}>
-            <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
-            <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
+          <h2 className="mt-5 fw-bold">CAST</h2>
+          <div className="cast-row mt-3" ref={ref}>
+            <button className="btn btn-outline-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
+            <button className="btn btn-outline-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
             {data.map((dataRow, index) => (
               <Link key={index} className="aLink card-link" to={'/movieshub/people/' + dataRow.id}>
                 <div className="card frameWidth" key={index}>
-                  <div className="card-img-top rounded">
-                    <LazyLoadImage className="img-fluid" src={POSTER_PATH + WIDTH_300 + dataRow.profile_path} effect="opacity" alt={dataRow.name} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
+                  <div className="card-img-top cast-img rounded-pill">
+                    <LazyLoadImage className="img-fluid cast" src={POSTER_PATH + WIDTH_300 + dataRow.profile_path} effect="opacity" alt={dataRow.name} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
                   </div>
                   <div className="card-body">
-                    <div className="card-text">
+                    <div className="card-text text-center mt-2">
                       <div>{dataRow.name}</div>
-                      <div className="text-muted">{dataRow['character']?.length >= 0 ? dataRow.character : dataRow['roles'].map((row, index) => (
+                      <div className="text-muted mt-1">{dataRow['character']?.length >= 0 ? dataRow.character : dataRow['roles'].map((row, index) => (
                         <span className="genre" key={index}>{row.character}</span>
                       ))}</div>
-                      {dataRow.total_episode_count && <div className="text-muted">{dataRow.total_episode_count} Episodes</div>}
+                      {dataRow.total_episode_count && <div className="text-muted">[{dataRow.total_episode_count} Episodes]</div>}
                     </div>
                   </div>
                 </div>

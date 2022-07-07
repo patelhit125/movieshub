@@ -36,11 +36,9 @@ const Person = () => {
     <>
       <div className="container">
         <div className="row mt-4">
-          <div className="col-12 col-md-3 col-sm-12">
-            <div className="bebasFont text-break hide-md">{data.name}</div>
+          <div className="col-8 col-md-3 col-sm-6">
             <LazyLoadImage className="img-fluid w-100 rounded" src={POSTER_PATH + WIDTH_ORIGINAL + data.profile_path} effect="opacity" alt={data.name} onError={(e) => { e.target.onerror = null; e.target.src = frame4 }} />
             <div className="mt-4">
-              <ExternalId id={id} name='person' />
               <div className='hide-sm'>
                 <h4 className="mt-4 fw-bold">PERSONAL INFO</h4>
                 {data['known_for_department']?.length > 0 && <><div className="mt-3"><b>Known for</b></div><div className='text-muted'>{data.known_for_department}</div></>}
@@ -49,7 +47,8 @@ const Person = () => {
                     <div>
                       <div className="text-bold">Gender</div>
                       <div className='text-muted'>{data.gender === 1 ? 'Female' : 'Male'}</div>
-                    </div>}
+                    </div>
+                  }
                 </div>
                 <div className="mt-3">
                   {data['birthday']?.length > 0 &&
@@ -85,8 +84,8 @@ const Person = () => {
             </div>
           </div>
           <div className="col-12 col-md-9 col-sm-12">
-            <div className="bebasFont text-break hide-sm">{data.name}</div>
-            <div className="text-preline text-muted">
+            <div className="avertaFont text-break">{data.name}</div>
+            <div className="text-preline text-muted mt-3">
               {data.biography ?
                 <ReadMoreReact text={data.biography}
                   ideal={idealLength}
@@ -96,8 +95,9 @@ const Person = () => {
             <RowList id={id} name='movieCredits' />
             <RowList id={id} name='tvCredits' />
             <div className='hide-md mt-5'>
-              <h4 className="mt-4 fw-bold">PERSONAL INFO</h4>
-              <div className="mt-3"><b>Known for</b></div><div className='text-muted'>{data.known_for_department}</div>
+              <h4 className="mt-4 mb-4 fw-bold">PERSONAL INFO</h4>
+              <ExternalId id={id} name='person' />
+              <div className="mt-4"><b>Known for</b></div><div className='text-muted'>{data.known_for_department}</div>
               <div className="mt-3">
                 {data['gender'] && data['gender'].length !== 0 &&
                   <div>

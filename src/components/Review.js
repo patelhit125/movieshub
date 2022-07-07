@@ -72,18 +72,18 @@ const Review = (props) => {
     <div>
       {data.length > 0 &&
         <>
-          <h2 className="mt-5 fw-bold">REVIEWS</h2>
+          <h2 className="mt-5 fw-bold mb-3">REVIEWS</h2>
           <div className={clamped ? "clamp" : "long-text"} ref={containerRef}>
             {data.map((dataRow, index) => (
               <div key={index}>
                 <div className="row mb-5">
-                  <div className="col-lg-1 col-md-2 col-12">
+                  <div className="col-lg-2 col-12 mt-3">
                     <LazyLoadImage key={index} className="rounded-circle" src={dataRow['author_details']['avatar_path'] && dataRow['author_details']['avatar_path'].substring(1)} effect="opacity" alt={dataRow.author} onError={(e) => { e.target.onerror = null; e.target.src = frame5 }} />
                   </div>
-                  <div className="col-lg-11 col-md-10 col-12 mt-3">
+                  <div className="col-lg-10 col-12 mt-3">
                     <h5 className="text-bold">A review by {dataRow.author}</h5>
                     <div className="text-secondary">{getDate(dataRow.created_at)}</div>
-                    <div>{dataRow['author_details']['rating'] && avg(dataRow['author_details']['rating'])} <span className="stars" style={{ '--rating': dataRow['author_details']['rating'] && avg(dataRow['author_details']['rating']) }}></span></div>
+                    <div className='mt-1'>{dataRow['author_details']['rating'] && <span className="stars" style={{ '--rating': dataRow['author_details']['rating'] && avg(dataRow['author_details']['rating']) }}></span>}</div>
                     <div className="mt-3 text-preline text-muted">
                       <ReadMoreReact text={dataRow.content}
                         ideal={idealLength}

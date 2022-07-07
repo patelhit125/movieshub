@@ -38,7 +38,7 @@ const Navigation = () => {
   window.onscroll = () => {
     const stNav = window.scrollY
     if (stNav > lastScrollNav) {
-      if (!document.getElementById('navbarSupportedContent').classList.contains('show')) { 
+      if (!document.getElementById('navbarSupportedContent').classList.contains('show')) {
         wrapperRef.current.classList.add("topHide")
         wrapperRef.current.classList.remove("topNav")
         ref.current.classList.add("hide")
@@ -47,7 +47,7 @@ const Navigation = () => {
     }
     else {
       if (window.pageYOffset < 400) {
-        if (!document.getElementById('navbarSupportedContent').classList.contains('show')) { 
+        if (!document.getElementById('navbarSupportedContent').classList.contains('show')) {
           wrapperRef.current.classList.add("topHide")
           wrapperRef.current.classList.remove("topNav")
           ref.current.classList.add("hide")
@@ -114,10 +114,10 @@ const Navigation = () => {
               </div>
               <div className="card-body">
                 <div className="card-text">
-                  <div className="text-muted">{dataRow.gender === 1 && 'Female'}{dataRow.gender === 2 && 'Male'}</div>
-                  <div className="text-muted">{dataRow.vote_average > 0 ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? <>{getDateShortest(dataRow.release_date)}</> : <>{getDateShortest(dataRow.first_air_date)}</>}</div>
-                  <div>{dataRow.title ? dataRow.title : dataRow.name}</div>
-                  <div className='text-muted'>
+                  <div className="text-muted mt-1">{dataRow.gender === 1 && 'Female'}{dataRow.gender === 2 && 'Male'}</div>
+                  <div className="text-muted mt-1">{dataRow.vote_average > 0 ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? <>{getDateShortest(dataRow.release_date)}</> : <>{getDateShortest(dataRow.first_air_date)}</>}</div>
+                  <div className='mt-1'>{dataRow.title ? dataRow.title : dataRow.name}</div>
+                  <div className='text-muted mt-1'>
                     {dataRow['known_for'] && dataRow['known_for'].map((dataKnown, index) => (
                       <span className="genre" key={index}>{dataKnown.title ? dataKnown.title : dataKnown.name}</span>
                     ))}
@@ -133,7 +133,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark topNav" ref={wrapperRef} id="navbar">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark topNav" ref={wrapperRef} id="navbar">
         <div className="container mt-1 mb-1">
           <Link className="navbar-brand" to='/movieshub/'>Movies<span className="text-primary" onClick={handleClick}>Hub</span></Link>
           <div className='d-flex justify-content-center align-items-center'>

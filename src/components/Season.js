@@ -51,7 +51,7 @@ const Season = (props) => {
       {data.length > 0 &&
         <div className="mt-5 position-relative">
           <h2 className='fw-bold'>SEASONS</h2>
-          <div className="d-flex flex-row" ref={ref}>
+          <div className="d-flex flex-row mt-3" ref={ref}>
             <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
             <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
             {data.map((dataRow, index) => (
@@ -63,8 +63,8 @@ const Season = (props) => {
                   <div className="card-body">
                     <div className="card-text">
                       <div className='text-muted'>{dataRow.air_date && getDateShortest(dataRow.air_date)}</div>
-                      <div>{dataRow.title ? dataRow.title : dataRow.name}</div>
-                      <div className="text-muted">{dataRow.episode_count} Episodes</div>
+                      <div className='mt-1'>{dataRow.title ? dataRow.title : dataRow.name}</div>
+                      <div className="text-muted mt-1">{dataRow.episode_count} Episodes</div>
                     </div>
                   </div>
                 </div>

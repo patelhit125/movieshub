@@ -63,12 +63,12 @@ const Video = (props) => {
   return (
     data.length > 0 &&
       <>
-        <span className='align-middle'>{data.filter((item) => item.type === "Trailer").map((dataTrailer, index) => (index < 1 && dataTrailer ? <a className='aLink btn bg-dark text-light mt-3' key={index} href={"https://www.youtube.com/watch?v=" + dataTrailer.key} target="_blank" rel="noreferrer"><IoPlay className='me-2 mb-1' />Play trailer</a> : null))}</span>
+        <span className='align-middle'>{data.filter((item) => item.type === "Trailer").map((dataTrailer, index) => (index < 1 && dataTrailer ? <a className='aLink btn btn-primary text-light mt-3' key={index} href={"https://www.youtube.com/watch?v=" + dataTrailer.key} target="_blank" rel="noreferrer"><IoPlay className='me-2 mb-1' />Play trailer</a> : null))}</span>
         <div className="mt-5 position-relative">
           <h2 className='fw-bold'>VIDEOS</h2>
-          <div className="d-flex flex-row" ref={ref}>
-            <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
-            <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
+          <div className="d-flex flex-row mt-3" ref={ref}>
+            <button className="btn btn-outline-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
+            <button className="btn btn-outline-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
             {data.map((dataRow, index) => (
               <div key={index} className="card-link" to='/movieshub/'>
                 <div className="card" key={index}>
@@ -79,7 +79,7 @@ const Video = (props) => {
                         title={dataRow.name ? dataRow.name : dataRow.title}
                         loading="lazy"
                       />
-                      <div className='text-break'>{dataRow.name ? dataRow.name : dataRow.title}</div>
+                      <div className='text-break mt-1'>{dataRow.name ? dataRow.name : dataRow.title}</div>
                     </div>
                   </div>
                 </div>

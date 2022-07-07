@@ -184,9 +184,9 @@ const RowList = (props) => {
       {data.length > 0 &&
         <div className="position-relative">
           <h2 className='fw-bold'>{dataNameRow.name}</h2>
-          <div className="d-flex flex-row" ref={ref}>
-            <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
-            <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
+          <div className="d-flex flex-row mt-3" ref={ref}>
+            <button className="btn btn-outline-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
+            <button className="btn btn-outline-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
             {data.map((dataRow, index) => (
               <div key={index} className="card-link aLink" onClick={() => { window.location.href = dataRow.media_type ? dataRow.media_type === 'movie' ? dataNameRow.to.movie + dataRow.id : dataNameRow.to.tv + dataRow.id : dataNameRow.to + dataRow.id }}>
                 <div className="card frameWidth" key={index}>
@@ -195,9 +195,8 @@ const RowList = (props) => {
                   </div>
                   <div className="card-body">
                     <div className="card-text">
-                      <div className="text-muted">{dataRow.vote_average ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? getDateShortest(dataRow.release_date) : getDateShortest(dataRow.first_air_date)}</div>
-                      <div>{dataRow.title ? dataRow.title : dataRow.name}</div>
-
+                      <div className="text-muted mt-1">{dataRow.vote_average ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? getDateShortest(dataRow.release_date) : getDateShortest(dataRow.first_air_date)}</div>
+                      <div className='mt-1'>{dataRow.title ? dataRow.title : dataRow.name}</div>
                     </div>
                   </div>
                 </div>

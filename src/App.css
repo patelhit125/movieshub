@@ -6,6 +6,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+@font-face {
+  font-family: 'Averta';
+  src: local('Averta'), url(./resources/fonts/averta-regular.woff) format('woff'), url(./resources/fonts/averta-regular.woff2) format('woff2');
+}
+
 :root {
   --bs-blue: #ffc107;
   --bs-indigo: #6610f2;
@@ -28,7 +33,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #10141f;
-  --bs-font-sans-serif: 'Manrope', Fallback, sans-serif;
+  --bs-font-sans-serif: 'Averta', sans-serif, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -2929,7 +2934,7 @@ textarea.form-control-lg {
   -moz-user-select: none;
   user-select: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0.8rem 2rem;
   font-size: 1rem;
   border-radius: 25rem;
@@ -3202,7 +3207,7 @@ textarea.form-control-lg {
   border-color: #ffc107;
 }
 .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(253, 208, 83, 0.25);
 }
 .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
   color: #fff;
@@ -3210,7 +3215,7 @@ textarea.form-control-lg {
   border-color: #ffc107;
 }
 .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(253, 208, 83, 0.25);
 }
 .btn-outline-primary:disabled, .btn-outline-primary.disabled {
   color: #ffc107;
@@ -6945,7 +6950,7 @@ textarea.form-control-lg {
 }
 
 .mt-4 {
-  margin-top: 1.5rem !important;
+  margin-top: 3rem !important;
 }
 
 .mt-5 {

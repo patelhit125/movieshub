@@ -29,27 +29,32 @@ html {
   width: 100%;
 }
 
+@font-face {
+  font-family: 'Averta';
+  src: local('Averta'), url(./resources/fonts/averta-regular.woff) format('woff'), url(./resources/fonts/averta-regular.woff2) format('woff2');
+}
+
 body {
   margin: 0;
-  font-family: 'Manrope', Fallback, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Averta', sans-serif, sans-serif;
   line-height: 1.5;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #090c13 !important;
   color: #f8f9fa !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.bebasFont {
-  font-family: "Bebas Neue", sans-serif;
+.avertaFont {
+  font-family: "Averta", sans-serif;
   font-weight: 800;
-  line-height: 1;
-  font-size: 5rem;
+  line-height: 1.2;
+  font-size: 3rem;
 }
 
-@media (max-width: 768px) {
-  .bebasFont {
-    font-size: 3.5rem;
+@media (max-width: 991.98px) {
+  .avertaFont {
+    font-size: 2rem;
   }
 }
 
@@ -65,13 +70,17 @@ body {
 
 .overlay {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  z-index: 999;
   background-color: #10141f;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   position: fixed;
+  z-index: 999 !important;
+}
+
+.lazy-load-image-background {
+  width: 100%;
 }
 
 .banner {
@@ -82,14 +91,44 @@ body {
 .banner-inner {
   height: 100%;
   position: relative;
-  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-inner span, .banner-inner .backdrop {
+  z-index: -1 !important;
+}
+
+.btn-overlay {
+  position: absolute;
+}
+
+.btn-play {
+  height: 50px;
+  background: rgba(255,255,255,.3);
+  border-radius: 5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: top;
+  padding: 0.8rem 1.1rem;
+  transition: all .3s ease 0s;
+  -webkit-transition: all .3s ease 0s;
+  -moz-transition: all .3s ease 0s;
+}
+
+.btn-play svg {
+  margin-top: -5px !important;
 }
 
 .img-backdrop {
   height: 50vh;
   object-fit: cover;
   object-position: 50% 10%;
-  width: 100vw;
+  width: 100%;
   background-color: #293350;
 }
 
@@ -107,10 +146,10 @@ body {
 
 .img-poster {
   width: 100%;
-  margin-top: -20rem;
-  box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
-  z-index: 9999;
+}
+
+.title {
+  margin-top: -50px !important;
 }
 
 .h-1 {
@@ -140,7 +179,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00071a;
+  background: rgba(255,255,255,.3);
   border-radius: 40px;
   cursor: pointer;
 }
@@ -170,7 +209,7 @@ iframe {
   height: auto !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   .img-backdrop {
     width: 100vw;
     height: 30vh;
@@ -200,13 +239,13 @@ iframe {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991.98px) {
   .navbarToggler {
     display: none;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991.98px) {
   .hide-md {
     display: none !important;
   }
@@ -215,12 +254,11 @@ iframe {
 @media (max-width: 996px) {
   .img-poster {
     width: 200%;
-    margin-top: -20rem;
   }
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   .slick-dots {
     bottom: -50px !important;
   }
@@ -236,11 +274,6 @@ iframe {
 
   .hide-sm {
     display: none !important;
-  }
-
-  .img-poster {
-    width: 40%;
-    margin-top: -10rem;
   }
 }
 
@@ -277,18 +310,20 @@ iframe {
   display: none;
 }
 
+.btn svg {
+  margin-top: -4px;
+}
+
 .scroll-button1 {
-  margin-top: 120px;
-  left: 15px;
-  z-index: 1;
-  padding: 11px 15px !important;
+  margin-top: -50px;
+  right: 55px;
+  padding: 5px 9px !important;
 }
 
 .scroll-button2 {
-  margin-top: 120px;
-  right: 15px;
-  z-index: 1;
-  padding: 11px 15px !important;
+  margin-top: -50px;
+  right: 0;
+  padding: 5px 9px !important;
 }
 
 .slider-title {
@@ -322,7 +357,6 @@ iframe {
 
 .stars::before {
   content: "★★★★★★★★★★";
-  vertical-align: middle !important;
   letter-spacing: 4px;
   background: linear-gradient(
     90deg,
@@ -368,7 +402,7 @@ iframe {
   display: block;
   position: sticky;
   transition: top 0.3s;
-  z-index: 999 !important;
+  z-index: 1;
 }
 
 .topNav {

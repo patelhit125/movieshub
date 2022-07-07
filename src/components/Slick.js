@@ -59,16 +59,16 @@ const Slick = (props) => {
       {data.length > 0 &&
         data.map((dataRow, index) => (
           <Link className='banner' key={index} to={dataRow.media_type ? dataRow.media_type === 'movie' ? dataNameRow.to.movie + dataRow.id : dataNameRow.to.tv + dataRow.id : dataNameRow.to + dataRow.id}>
-            <LazyLoadImage className="img-backdrop h-1 img-slick" src={POSTER_PATH + WIDTH_ORIGINAL + dataRow.backdrop_path} effect="opacity" alt={dataRow.title ? dataRow.title : dataRow.name} onError={(e) => { e.target.onerror = null; e.target.src = frame2 }} />
-            <div className="backdrop"></div>
-            <div className="text-center slider-title vw-100 position-absolute text-center p-md-3 p-sm-2 p-1">
+            <LazyLoadImage className="img-backdrop" src={POSTER_PATH + WIDTH_ORIGINAL + dataRow.backdrop_path} effect="opacity" alt={dataRow.title ? dataRow.title : dataRow.name} onError={(e) => { e.target.onerror = null; e.target.src = frame2 }} />
+            <div className='backdrop'></div>
+            <div className="text-center slider-title w-100 position-absolute text-center p-md-3 p-sm-2 p-1">
               <h2>{dataRow.title ? dataRow.title : dataRow.name}</h2>
               <div>
-                <span className="stars" style={{'--rating': dataRow.vote_average && avg(dataRow.vote_average)}}></span> {dataRow.vote_average && avg(dataRow.vote_average)}
+                <span className="stars" style={{ '--rating': dataRow.vote_average && avg(dataRow.vote_average) }}></span>
               </div>
             </div>
           </Link>
-        ))}      
+        ))}
     </Slider>
   )
 }

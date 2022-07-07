@@ -49,8 +49,8 @@ const Images = (props) => {
     <>
       {data.length > 0 &&
         <div>
-          <h1 className="mt-5 fw-bold">GALLERY</h1>
-          <div>
+          <h2 className="mt-5 fw-bold">GALLERY</h2>
+          <div className='mt-3'>
             <SimpleReactLightbox>
               <SRLWrapper options={options}>
                 <div className='row'>
