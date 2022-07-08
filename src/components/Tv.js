@@ -47,22 +47,15 @@ const Tv = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-2">
+          <div className="col-12 col-lg-2">
             <LazyLoadImage className="img-poster rounded hide-sm" src={POSTER_PATH + WIDTH_300 + data.poster_path} effect="opacity" alt={data.name} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
             {data.homepage && <div className='hide-sm mt-3'><a href={data.homepage} target="_blank" rel="noreferrer">Homepage <FiExternalLink className="ms-2 mb-1" /></a></div>}
             <div className="avertaFont text-break hide-md text-center title">{data.name}</div>
             <div className='hide-sm'>
               <div className="mt-3"><ExternalId id={id} name='tv' /></div>
-              <div>{data.status && <><div className="mt-4 text-bold">Status</div><div className='text-muted'>{data.status}</div></>}</div>
-              <div>{data.type && <><div className="mt-3 text-bold">Type</div><div className='text-muted'>{data.type}</div></>}</div>
-              <div>
-                {data.networks?.length > 0 && <><div className="mt-3 text-bold">Network</div><div className='text-muted'>{data['networks'].map((dataNetwork, index) => (<div key={index}>{dataNetwork.name}</div>))}</div></>}
-              </div>
-              <div>{data.original_language && <><div className="mt-3 text-bold">Language</div><div className='text-muted'>{data.original_language}</div></>}</div>
-              <Keyword id={id} name='tv' />
             </div>
           </div>
-          <div className="col-12 col-md-10">
+          <div className="col-12 col-lg-8">
             <div className='text-center'>
               <div className="avertaFont text-break hide-sm mb-2">{data.name}</div>
               <div className='text-muted mt-2'>
@@ -95,6 +88,15 @@ const Tv = () => {
             <Season id={id} />
             <CastList id={id} name='tv' />
             <Review id={id} name='tv' />
+          </div>
+          <div className='col-12 col-md-2 hide-sm mt-2'>
+              <div>{data.status && <><div className="text-bold">STATUS</div><div className='text-muted'>{data.status}</div></>}</div>
+              <div>{data.type && <><div className="mt-3 text-bold">TYPE</div><div className='text-muted'>{data.type}</div></>}</div>
+              <div>
+                {data.networks?.length > 0 && <><div className="mt-3 text-bold">NETWORK</div><div className='text-muted'>{data['networks'].map((dataNetwork, index) => (<div key={index}>{dataNetwork.name}</div>))}</div></>}
+              </div>
+              <div>{data.original_language && <><div className="mt-3 text-bold">LANGUAGE</div><div className='text-muted'>{data.original_language}</div></>}</div>
+              <Keyword id={id} name='tv' />
           </div>
         </div>
         {/* <Image id={id} name='tv' /> */}

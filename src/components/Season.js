@@ -52,8 +52,8 @@ const Season = (props) => {
         <div className="mt-5 position-relative">
           <h2 className='fw-bold'>SEASONS</h2>
           <div className="d-flex flex-row mt-3" ref={ref}>
-            <button className="btn btn-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
-            <button className="btn btn-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
+            <button className="btn btn-outline-primary position-absolute scroll-button1 hide" onClick={() => scrollRight(500)}><FiChevronLeft /></button>
+            <button className="btn btn-outline-primary position-absolute scroll-button2" onClick={() => scrollLeft(500)}><FiChevronRight /></button>
             {data.map((dataRow, index) => (
               <Link key={index} className="aLink card-link" to={'/movieshub/tv/' + id + '/season/' + dataRow.season_number}>
                 <div className="card frameWidth" key={index}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy } from 'react'
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import { API_TV, API_KEY, POSTER_PATH, WIDTH_ORIGINAL, avg, WIDTH_500, getDateShortest } from '../constant';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ReadMoreReact from 'read-more-react';
@@ -13,6 +13,7 @@ const OverLay = lazy(() => retry(() => import('./OverLay')));
 const Episodes = () => {
   const id = useParams().id;
   const season = useParams().number;
+  const history = useHistory();
   const [data, setData] = useState([]);
 
   const idealLength = 200;
@@ -40,11 +41,12 @@ const Episodes = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-2">
+          <div className="col-12 col-lg-2">
             {/* <LazyLoadImage className="img-poster rounded" src={POSTER_PATH + WIDTH_300 + data.poster_path} effect="opacity" alt={data.name} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} /> */}
           </div>
-          <div className="col-12 col-md-10 mt-3">
-            <div className="avertaFont text-break">{data.name}</div>
+          <div className="col-12 col-lg-10">
+            <div className='aLink' onClick={history.goBack}>&#8592; Back</div>
+            <div className="avertaFont text-break mt-4">{data.name}</div>
             <div className="text-muted">{getDateShortest(data.air_date)}</div>
             <div className="mt-3 text-muted">{data.overview}</div>
             <div className="mt-5">

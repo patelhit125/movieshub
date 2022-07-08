@@ -51,7 +51,7 @@ const People = () => {
                 </div>
                 <div className="card-body">
                   <div className="card-text">
-                    <div className="text-muted mt-1">{dataRow.vote_average && <>{avg(dataRow.vote_average)} &#8212;</>} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? getDateShortest(dataRow.release_date) : getDateShortest(dataRow.first_air_date)}</div>
+                    <div className="text-muted mt-1">{dataRow.vote_average ? <>{avg(dataRow.vote_average)} &#8212;</> : null} {(dataRow.release_date || dataRow.first_air_date) && dataRow.release_date ? getDateShortest(dataRow.release_date) : getDateShortest(dataRow.first_air_date)}</div>
                     <div className='mt-1'>{dataRow.title ? dataRow.title : dataRow.name}</div>
                   </div>
                 </div>
