@@ -64,7 +64,7 @@ const Slick = (props) => {
             <div className="text-center slider-title w-100 position-absolute text-center p-md-3 p-sm-2 p-1">
               <h2>{dataRow.title ? dataRow.title : dataRow.name}</h2>
               <div>
-                <span className="stars" style={{ '--rating': dataRow.vote_average && avg(dataRow.vote_average) }}></span>
+                <span className="stars" style={{ '--rating': dataRow.vote_average ? avg(dataRow.vote_average) : null }}></span>
               </div>
             </div>
           </Link>

@@ -207,6 +207,7 @@ iframe {
 .episodeImage {
   max-width: 100% !important;
   height: auto !important;
+  background-color: #293350;
 }
 
 @media (max-width: 991.98px) {

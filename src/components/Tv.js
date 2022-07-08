@@ -63,7 +63,7 @@ const Tv = () => {
                   <span className="genre" key={index}>{dataGenre.name}</span>
                 ))} &#8226; {count_runtime(data['episode_run_time']) && count_runtime(data['episode_run_time'])}
               </div>
-              <div className='mt-3'><span className="stars" style={{ '--rating': data.vote_average && avg(data.vote_average) }}></span></div>
+              <div className='mt-3'><span className="stars" style={{ '--rating': data.vote_average ? avg(data.vote_average) : null }}></span></div>
             </div>
             <div className='mt-4'>
               {data.content_ratings && data.content_ratings['results'].map((dataCerti, index) => (

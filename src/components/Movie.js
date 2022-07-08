@@ -46,7 +46,7 @@ const Movie = () => {
         <div className='backdrop'></div>
         <OverLay id={id} name='movie' title={data.title} />
       </div>
-      <div className="container zidx-2">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-lg-2">
             <LazyLoadImage className="img-poster rounded hide-sm" src={POSTER_PATH + WIDTH_500 + data.poster_path} effect="opacity" alt={data.title} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
@@ -64,7 +64,7 @@ const Movie = () => {
                   <span className="genre" key={index}>{dataGenre.name}</span>
                 ))} &#8226; {count_runtime(data.runtime)}
               </div>
-              <div className='mt-3'>{data.vote_average && <span className="stars" style={{ '--rating': data.vote_average && avg(data.vote_average) }}></span>}</div>
+              <div className='mt-3'>{data.vote_average ? <span className="stars" style={{ '--rating': data.vote_average && avg(data.vote_average) }}></span> : null}</div>
             </div>
             <div className='mt-4'>{data.release_dates && data.release_dates['results'].map((dataCerti, index) => (
               dataCerti.iso_3166_1 === 'US' &&

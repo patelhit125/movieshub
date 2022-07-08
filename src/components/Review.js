@@ -77,13 +77,13 @@ const Review = (props) => {
             {data.map((dataRow, index) => (
               <div key={index}>
                 <div className="row mb-5">
-                  <div className="col-lg-2 col-12 mt-3">
-                    <LazyLoadImage key={index} className="rounded-circle" src={dataRow['author_details']['avatar_path'] && dataRow['author_details']['avatar_path'].substring(1)} effect="opacity" alt={dataRow.author} onError={(e) => { e.target.onerror = null; e.target.src = frame5 }} />
+                  <div className="col-lg-auto col-12 mt-3">
+                    <LazyLoadImage key={index} className="rounded-circle" src={dataRow['author_details']['avatar_path'] && dataRow['author_details']['avatar_path']?.substring(1)} effect="opacity" alt={dataRow.author} onError={(e) => { e.target.onerror = null; e.target.src = frame5 }} />
                   </div>
                   <div className="col-lg-10 col-12 mt-3">
                     <h5 className="text-bold">A review by {dataRow.author}</h5>
                     <div className="text-secondary">{getDate(dataRow.created_at)}</div>
-                    <div className='mt-1'>{dataRow['author_details']['rating'] && <span className="stars" style={{ '--rating': dataRow['author_details']['rating'] && avg(dataRow['author_details']['rating']) }}></span>}</div>
+                    <div className='mt-1'>{dataRow['author_details']['rating'] ? <span className="stars" style={{ '--rating': dataRow['author_details']['rating'] && avg(dataRow['author_details']['rating']) }}></span> : null}</div>
                     <div className="mt-3 text-preline text-muted">
                       <ReadMoreReact text={dataRow.content}
                         ideal={idealLength}
@@ -96,7 +96,7 @@ const Review = (props) => {
           </div>
           <div className='text-center mt-4'>
             {showButton && (
-              <button className='btn bg-dark text-light' onClick={handleClick}>{clamped ? <FiChevronDown /> : <FiChevronUp />}</button>
+              <button className='btn btn-outline-dark text-light' onClick={handleClick}>{clamped ? <FiChevronDown /> : <FiChevronUp />}</button>
             )}
           </div>
         </>}

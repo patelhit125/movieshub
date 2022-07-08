@@ -15,7 +15,8 @@ const Episodes = () => {
   const season = useParams().number;
   const history = useHistory();
   const [data, setData] = useState([]);
-
+  
+  const maxLength = 300;
   const idealLength = 200;
 
   useEffect(() => {
@@ -23,7 +24,6 @@ const Episodes = () => {
       axios.get(API_TV + id + '/season/' + season + '?api_key=' + API_KEY)
         .then((data) => {
           setData(data.data);
-          console.log(data.data);
         })
         .catch((error) => {
           console.error(error);
@@ -48,8 +48,15 @@ const Episodes = () => {
             <div className='aLink' onClick={history.goBack}>&#8592; Back</div>
             <div className="avertaFont text-break mt-4">{data.name}</div>
             <div className="text-muted">{getDateShortest(data.air_date)}</div>
-            <div className="mt-3 text-muted">{data.overview}</div>
-            <div className="mt-5">
+            <div className="mt-3 mb-0 text-muted">
+              {data.overview &&
+                <ReadMoreReact text={data.overview}
+                  ideal={idealLength}
+                  max={maxLength}
+                  readMoreText="Read more" />
+              }  
+            </div>
+            <div>
               {data.episodes && Object.keys(data.episodes).map((dataRow, index) => (
                 <div className="mt-5 card episodeWidth" key={index}>
                   <div className="row">
@@ -60,7 +67,7 @@ const Episodes = () => {
                       <div className="card-text">
                         <div className="text-muted">Episode {data['episodes'][dataRow].episode_number} &#8212; {data['episodes'][dataRow].air_date ? getDateShortest(data['episodes'][dataRow].air_date) : getDateShortest(data['episodes'][dataRow].first_air_date)}</div>
                         <div className="text-bold mt-1">{data['episodes'][dataRow].name ? data['episodes'][dataRow].name : data['episodes'][dataRow].episode_number}</div>
-                        <div className='mt-2'>{data['episodes'][dataRow].vote_average && <span className="stars" style={{ '--rating': data['episodes'][dataRow].vote_average && avg(data['episodes'][dataRow].vote_average) }}></span>}</div>
+                        <div className='mt-2'>{data['episodes'][dataRow].vote_average ? <span className="stars" style={{ '--rating': data['episodes'][dataRow].vote_average && avg(data['episodes'][dataRow].vote_average) }}></span> : null}</div>
                         <div className="mt-3 text-muted">
                           <ReadMoreReact text={data['episodes'][dataRow].overview}
                             ideal={idealLength}
