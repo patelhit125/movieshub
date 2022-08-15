@@ -46,7 +46,7 @@ const Episodes = () => {
           </div>
           <div className="col-12 col-lg-10">
             <div className='aLink' onClick={history.goBack}>&#8592; Back</div>
-            <div className="avertaFont text-break mt-4">{data.name}</div>
+            <div className="manropeFont text-break mt-4">{data.name}</div>
             <div className="text-muted">{getDateShortest(data.air_date)}</div>
             <div className="mt-3 mb-0 text-muted">
               {data.overview &&

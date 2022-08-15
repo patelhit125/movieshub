@@ -6,11 +6,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-@font-face {
-  font-family: 'Averta';
-  src: local('Averta'), url(./resources/fonts/averta-regular.woff) format('woff'), url(./resources/fonts/averta-regular.woff2) format('woff2');
-}
-
 :root {
   --bs-blue: #ffc107;
   --bs-indigo: #6610f2;
@@ -33,7 +28,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #10141f;
-  --bs-font-sans-serif: 'Averta', sans-serif, sans-serif;
+  --bs-font-sans-serif: 'Manrope', sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }

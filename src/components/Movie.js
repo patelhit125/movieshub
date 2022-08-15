@@ -51,14 +51,14 @@ const Movie = () => {
           <div className="col-12 col-lg-2">
             <LazyLoadImage className="img-poster rounded hide-sm" src={POSTER_PATH + WIDTH_500 + data.poster_path} effect="opacity" alt={data.title} onError={(e) => { e.target.onerror = null; e.target.src = frame1 }} />
             {data.homepage && <div className='hide-sm mt-4'><a href={data.homepage} target="_blank" rel="noreferrer">Homepage <FiExternalLink className="ms-2 mb-1" /></a></div>}
-            <div className="avertaFont hide-md text-break title text-center">{data.title}</div>
+            <div className="manropeFont hide-md text-break title text-center">{data.title}</div>
             <div className='hide-sm'>
               <div><ExternalId id={id} name='movie' /></div>
             </div>
           </div>
           <div className="col-12 col-lg-8">
             <div className='text-center'>
-              <div className="avertaFont hide-sm text-break mb-2">{data.title}</div>
+              <div className="manropeFont hide-sm text-break mb-2">{data.title}</div>
               <div className='text-secondary mt-2'>
                 {data.release_date && getDateShortest(data.release_date)} &#8226; {data['genres'] && data['genres'].map((dataGenre, index) => (
                   <span className="genre" key={index}>{dataGenre.name}</span>

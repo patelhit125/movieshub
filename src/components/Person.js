@@ -84,7 +84,7 @@ const Person = () => {
             </div>
           </div>
           <div className="col-12 col-md-9 col-sm-12">
-            <div className="avertaFont text-break">{data.name}</div>
+            <div className="manropeFont text-break">{data.name}</div>
             <div className="text-preline text-muted mt-3">
               {data.biography ?
                 <ReadMoreReact text={data.biography}
